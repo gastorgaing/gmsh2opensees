@@ -4,7 +4,7 @@ gmsh.initialize()
 gmsh.open("example2.msh")
 
 #Import opensees and the tools
-import opensees as ops
+import openseespy.opensees as ops
 import gmsh2opensees as g2o
 
 

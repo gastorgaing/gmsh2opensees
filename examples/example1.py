@@ -4,7 +4,7 @@ gmsh.initialize()
 gmsh.open("example2.msh")
 
 #Import opensees and the tools
-import opensees as ops
+import openseespy.opensees as ops
 import gmsh2opensees as g2o
 
 
@@ -20,7 +20,7 @@ rho = 7300.
 ops.nDMaterial('ElasticIsotropic', solidMaterialTag, E, nu, rho)
 
 #Add nodes from Soil physical group
-elementTags, nodeTags, elementName, elementNnodes = g2o.get_elements_and_nodes_in_physical_group("Solid", gmsh.model)
+elementTags, nodeTags, elementName, elementNnodes = g2o.get_elements_and_nodes_in_physical_group('Solid', gmsh.model)
 g2o.add_nodes_to_ops(nodeTags, gmsh.model)
 
 #Add solid elements
